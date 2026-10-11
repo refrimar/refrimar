@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refrimar - Refrigeração & Climatização | Venda, Instalação e Manutenção de Ar Condicionado em Aracati</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts: Inter e Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <!-- Título focado em serviço + cidade/região -->
+
+<!-- Meta Description (o resumo que aparece no Google) -->
+<meta name="description" content="Especialista em ar-condicionado em Aracati. Instalação Split, higienização, manutenção preventiva, contratos PMOC para empresas e recarga de gás. Peça seu orçamento!">
+
+<!-- Palavras-Chave no corpo da página -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        brand: ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        refrimar: {
+                            navy: '#0d47a1',     /* Azul Marinho Escuro da Vela e Logo */
+                            royal: '#1e88e5',    /* Azul Royal das Velas Superiores */
+                            sky: '#42a5f5',      /* Azul Claro Destaque e Floco de Neve */
+                            light: '#e3f2fd',    /* Azul Gelo de Fundo */
+                            dark: '#0a2540',     /* Azul Quase Preto para Rodapé */
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-hero {
+            background: linear-gradient(135deg, #0a2540 0%, #0d47a1 50%, #1e88e5 100%);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.90);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .snow-particle {
+            position: absolute;
+            pointer-events: none;
+            opacity: 0.25;
+            animation: float 9s infinite ease-in-out;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-800 bg-slate-50 antialiased selection:bg-refrimar-sky selection:text-white">
+
+    <!-- BARRA SUPERIOR INFORMATIVA (Top Bar Legislação / Contato) -->
+    <div class="bg-refrimar-dark text-slate-300 text-xs py-2 px-4 border-b border-white/10 hidden sm:block">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+            <div class="flex items-center gap-6">
+                <span class="flex items-center gap-1.5 text-refrimar-sky font-medium">
+                    <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+                    <span>Empresa Cadastrada & Registrada | CNPJ: <strong class="text-white">50.989.608/0001-69</strong></span>
+                </span>
+                <span class="flex items-center gap-1.5">
+                    <i data-lucide="clock" class="w-3.5 h-3.5 text-refrimar-sky"></i>
+                    <span>Seg a Sex: 08h às 18h | Sáb: 08h às 13h</span>
+                </span>
+            </div>
+            <div class="flex items-center gap-4">
+                <span class="flex items-center gap-1">
+                    <i data-lucide="file-text" class="w-3.5 h-3.5 text-emerald-400"></i>
+                    <span class="text-slate-200">Emitimos NFe</span>
+                </span>
+                <a href="#orcamento" class="text-refrimar-sky hover:underline font-semibold">Atendimento Rápido</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- CABEÇALHO / HEADER -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- LOGO REFRIMAR -->
+            <a href="#" class="flex items-center gap-3 group">
+                <!-- Ícone Estilizado da Logo Refrimar (Barco + Floco de Neve) -->
+                <div class="relative w-12 h-12 flex items-center justify-center shrink-0">
+                    <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow-sm">
+                        <!-- Círculo do Floco de Neve -->
+                        <circle cx="28" cy="28" r="16" fill="#42a5f5" />
+                        <path d="M28 18 L28 38 M18 28 L38 28 M21 21 L35 35 M35 21 L21 35" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                        <!-- Vela Azul Royal -->
+                        <path d="M48 20 C 58 32, 68 45, 72 48 C 60 50, 52 48, 42 50 Z" fill="#1e88e5" />
+                        <!-- Vela Azul Escuro -->
+                        <path d="M45 22 C 35 38, 25 50, 20 52 C 35 53, 42 51, 46 51 Z" fill="#0d47a1" />
+                        <!-- Casco do Barco -->
+                        <path d="M15 56 C 40 56, 65 52, 75 48 C 70 58, 45 62, 22 62 Z" fill="#0d47a1" />
+                        <path d="M18 64 C 40 64, 55 60, 68 56" stroke="#42a5f5" stroke-width="3" fill="none" stroke-linecap="round" />
+                    </svg>
+                </div>
+                
+                <div class="flex flex-col">
+                    <span class="font-brand font-black text-2xl tracking-tight text-slate-900 leading-none">
+                        REFRI<span class="text-refrimar-royal">MAR</span>
+                    </span>
+                    <span class="text-[9px] font-bold uppercase tracking-widest text-slate-600 mt-0.5">
+                        Refrigeração & Climatização
+                    </span>
+                </div>
+            </a>
+
+            <!-- NAV DESKTOP -->
+            <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-slate-700">
+                <a href="#inicio" class="hover:text-refrimar-royal transition-colors">Início</a>
+                <a href="#servicos" class="hover:text-refrimar-royal transition-colors">Serviços</a>
+                <a href="#galeria" class="hover:text-refrimar-royal transition-colors">Nossas Obras</a>
+                <a href="#simulador" class="hover:text-refrimar-royal transition-colors flex items-center gap-1 text-refrimar-navy">
+                    <i data-lucide="calculator" class="w-4 h-4 text-refrimar-sky"></i>
+                    Simulador BTU
+                </a>
+                <a href="#diferenciais" class="hover:text-refrimar-royal transition-colors">Por Que Nós</a>
+            </nav>
+
+            <!-- BOTÕES CTA -->
+            <div class="hidden sm:flex items-center gap-3">
+                <a href="https://wa.me/558893281525?text=Olá!%20Vim%20pelo%20site%20da%20Refrimar%20e%20gostaria%20de%20um%20orçamento." 
+                   target="_blank" rel="noopener"
+                   class="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2.5 rounded-xl font-bold text-sm shadow-md shadow-emerald-500/20 transition-all hover:scale-[1.02]">
+                    <i data-lucide="message-circle" class="w-4 h-4"></i>
+                    <span>WhatsApp</span>
+                </a>
+                <a href="#orcamento" class="bg-refrimar-navy hover:bg-refrimar-royal text-white px-5 py-2.5 rounded-xl font-bold text-sm shadow-md transition-all hover:scale-[1.02]">
+                    Solicitar Orçamento
+                </a>
+            </div>
+
+            <!-- MENU MOBILE TOGGLE -->
+            <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg text-slate-800 hover:bg-slate-100 focus:outline-none">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- DROPDOWN MOBILE -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3">
+            <a href="#inicio" class="block py-2 text-slate-800 font-medium hover:text-refrimar-royal">Início</a>
+            <a href="#servicos" class="block py-2 text-slate-800 font-medium hover:text-refrimar-royal">Serviços</a>
+            <a href="#galeria" class="block py-2 text-slate-800 font-medium hover:text-refrimar-royal">Galeria de Fotos Autorais</a>
+            <a href="#simulador" class="block py-2 text-slate-800 font-medium hover:text-refrimar-royal">Simulador de BTU</a>
+            <a href="#diferenciais" class="block py-2 text-slate-800 font-medium hover:text-refrimar-royal">Diferenciais</a>
+            <div class="pt-3 border-t border-slate-100 flex flex-col gap-2">
+                <a href="https://wa.me/558893281525" target="_blank" class="w-full text-center bg-emerald-500 text-white py-2.5 rounded-xl font-bold text-sm flex items-center justify-center gap-2">
+                    <i data-lucide="message-circle" class="w-4 h-4"></i> WhatsApp
+                </a>
+                <a href="#orcamento" class="w-full text-center bg-refrimar-navy text-white py-2.5 rounded-xl font-bold text-sm">
+                    Solicitar Orçamento
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="inicio" class="relative gradient-hero text-white overflow-hidden py-16 lg:py-24">
+        <i data-lucide="snowflake" class="snow-particle top-10 left-10 w-12 h-12 text-white"></i>
+        <i data-lucide="snowflake" class="snow-particle top-1/3 right-12 w-16 h-16 text-white"></i>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold">
+                        <i data-lucide="shield-check" class="w-4 h-4 text-refrimar-sky"></i>
+                        <span>Especialistas Exclusivos em Ar Condicionado</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight">
+                        Climatização Profissional com a <span class="text-refrimar-sky">Refrimar</span>
+                    </h1>
+
+                    <p class="text-lg text-slate-200 max-w-xl font-light leading-relaxed">
+                        Instalação, limpeza profunda, manutenção e infraestrutura. Equipe treinada para garantir ar puro, alto desempenho e economia de energia no seu imóvel.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
+                        <a href="#orcamento" class="bg-white text-refrimar-navy hover:bg-slate-100 px-8 py-4 rounded-xl font-extrabold shadow-xl transition-all hover:scale-105 flex items-center justify-center gap-2">
+                            <span>Pedir Orçamento Grátis</span>
+                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#simulador" class="bg-refrimar-navy/60 hover:bg-refrimar-navy text-white border border-white/20 px-6 py-4 rounded-xl font-bold backdrop-blur-md transition-all flex items-center justify-center gap-2">
+                            <i data-lucide="calculator" class="w-5 h-5 text-refrimar-sky"></i>
+                            <span>Calcular BTUs do seu Espaço</span>
+                        </a>
+                    </div>
+
+                    <!-- Destaques Legais e de Garantia -->
+                    <div class="pt-6 border-t border-white/10 grid grid-cols-3 gap-2 text-center lg:text-left text-xs text-slate-300">
+                        <div class="flex flex-col">
+                            <span class="font-bold text-white text-base">+5.000</span>
+                            <span>Aparelhos Instalados</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="font-bold text-white text-base">Garantia</span>
+                            <span>Serviços de Instalação</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="font-bold text-emerald-400 text-base">Nota Fiscal</span>
+                            <span>Empresa 100% Legalizada</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative flex justify-center">
+                    <div class="relative w-full max-w-lg rounded-3xl overflow-hidden shadow-2xl border border-white/20">
+                        <img src="img/refrimarenergi.jpg" 
+                             alt="Técnico da Refrimar executando manutenção em Ar Condicionado" 
+                             class="w-full h-[400px] object-cover"
+                             onerror="this.src='https://placehold.co/600x400/0d47a1/ffffff?text=Refrimar+Climatizacao'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 right-6 glass-card p-4 rounded-2xl text-slate-900 flex items-center gap-4">
+                            <div class="w-10 h-10 bg-refrimar-navy text-white rounded-xl flex items-center justify-center shrink-0">
+                                <i data-lucide="check-circle" class="w-6 h-6 text-refrimar-sky"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm">Técnicos Credenciados</h4>
+                                <p class="text-xs text-slate-600">Preservamos a garantia de fábrica dos principais fabricantes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO DE SERVIÇOS -->
+    <section id="servicos" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-refrimar-royal font-bold text-xs uppercase tracking-wider">Especialização Exclusiva</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">Soluções Completas para seu Ar Condicionado</h2>
+                <p class="text-slate-600 mt-3 text-base">Trabalhamos exclusivamente com sistemas de refrigeração e climatização residencial e comercial.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 hover:border-refrimar-royal hover:shadow-xl transition-all group">
+                    <div class="w-12 h-12 bg-refrimar-light text-refrimar-navy rounded-2xl flex items-center justify-center mb-5 group-hover:bg-refrimar-navy group-hover:text-white transition-colors">
+                        <i data-lucide="wrench" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Instalação Técnica</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Instalação de modelos Split, Inverter, Cassete e Multi-Split com tubulação de cobre e vácuo na tubulação.</p>
+                </div>
+
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 hover:border-refrimar-royal hover:shadow-xl transition-all group">
+                    <div class="w-12 h-12 bg-refrimar-light text-refrimar-navy rounded-2xl flex items-center justify-center mb-5 group-hover:bg-refrimar-navy group-hover:text-white transition-colors">
+                        <i data-lucide="droplets" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Higienização</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Limpeza profunda da serpentina e filtros com produtos bactericidas aprovados pela Anvisa.</p>
+                </div>
+
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 hover:border-refrimar-royal hover:shadow-xl transition-all group">
+                    <div class="w-12 h-12 bg-refrimar-light text-refrimar-navy rounded-2xl flex items-center justify-center mb-5 group-hover:bg-refrimar-navy group-hover:text-white transition-colors">
+                        <i data-lucide="shield-alert" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Manutenção & Carga de Gás</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Diagnóstico de vazamentos, recarga de fluido refrigerante (R-410A / R-32) e substituição de peças.</p>
+                </div>
+
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 hover:border-refrimar-royal hover:shadow-xl transition-all group">
+                    <div class="w-12 h-12 bg-refrimar-light text-refrimar-navy rounded-2xl flex items-center justify-center mb-5 group-hover:bg-refrimar-navy group-hover:text-white transition-colors">
+                        <i data-lucide="building-2" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Infraestrutura</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Pré-instalação em obras.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERIA DE FOTOS AUTORAIS -->
+    <section id="galeria" class="py-20 bg-slate-100 border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-refrimar-royal font-bold text-xs uppercase tracking-wider">Trabalhos Reais</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">Nossas Instalações e Manutenções na Prática</h2>
+                <p class="text-slate-600 mt-3">Confira o padrão de qualidade e acabamento da equipe Refrimar no dia a dia.</p>
+            </div>
+
+            <!-- Grade de Imagens Prontas para Fotos Autorais -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Foto 1: Instalação Residencial -->
+                <div class="group relative rounded-2xl overflow-hidden bg-white shadow-md border border-slate-200">
+                    <img src="img/instalação.jpg" 
+                         alt="Instalação de Ar Condicionado Split pela Refrimar" 
+                         class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+                         onerror="this.src='https://placehold.co/600x400/0d47a1/ffffff?text=Sua+Foto+Aqui+1'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-90"></div>
+                    <div class="absolute bottom-4 left-4 right-4 text-white">
+                        <span class="bg-refrimar-royal text-[10px] font-bold px-2 py-0.5 rounded-md uppercase tracking-wider">Instalação</span>
+                        <h4 class="font-bold text-base mt-1">Split Inverter Residencial</h4>
+                        <p class="text-xs text-slate-300">Tubulação embutida e acabamento discreto.</p>
+                    </div>
+                </div>
+
+                <!-- Foto 2: Higienização Química -->
+                <div class="group relative rounded-2xl overflow-hidden bg-white shadow-md border border-slate-200">
+                    <img src="img/higienização.jpg" 
+                         alt="Higienização bactericida de Ar Condicionado" 
+                         class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+                         onerror="this.src='https://placehold.co/600x400/0d47a1/ffffff?text=Sua+Foto+Aqui+2'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-90"></div>
+                    <div class="absolute bottom-4 left-4 right-4 text-white">
+                        <span class="bg-emerald-600 text-[10px] font-bold px-2 py-0.5 rounded-md uppercase tracking-wider">Limpeza Profunda</span>
+                        <h4 class="font-bold text-base mt-1">Higienização Bactericida</h4>
+                        <p class="text-xs text-slate-300">Retirada completa para não sujar o ambiente.</p>
+                    </div>
+                </div>
+
+                <!-- Foto 3: Manutenção Comercial -->
+                <div class="group relative rounded-2xl overflow-hidden bg-white shadow-md border border-slate-200">
+                    <img src="img/comercial.jpg" 
+                         alt="Manutenção de ar condicionado em escritório" 
+                         class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+                         onerror="this.src='https://placehold.co/600x400/0d47a1/ffffff?text=Sua+Foto+Aqui+3'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-90"></div>
+                    <div class="absolute bottom-4 left-4 right-4 text-white">
+                        <span class="bg-refrimar-navy text-[10px] font-bold px-2 py-0.5 rounded-md uppercase tracking-wider">Manutenção</span>
+                        <h4 class="font-bold text-base mt-1">Revisão de Sistema Comercial</h4>
+                        <p class="text-xs text-slate-300">Medição de pressão de gás e corrente elétrica.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SIMULADOR DE BTU DE AR CONDICIONADO -->
+    <section id="simulador" class="py-20 bg-refrimar-light">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-refrimar-navy text-white text-xs font-bold uppercase tracking-wider">
+                    <i data-lucide="calculator" class="w-3.5 h-3.5 text-refrimar-sky"></i>
+                    Ferramenta Interativa
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3">Calculadora de Potência (BTUs)</h2>
+                <p class="text-slate-600 mt-2">Escolha informar a área pronta em m² ou calcular medindo a largura e o comprimento do cômodo.</p>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-xl border border-slate-200 p-6 sm:p-10">
+                <form id="btu-form" onsubmit="event.preventDefault(); calculateBTU();" class="space-y-6">
+                    
+                    <!-- Opção de Modo de Área -->
+                    <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 mb-6">
+                        <label class="block text-xs font-bold uppercase text-slate-500 tracking-wider mb-3">Como deseja calcular o tamanho do seu ambiente?</label>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <label class="relative flex items-center p-3.5 rounded-xl border border-slate-200 bg-white cursor-pointer hover:border-refrimar-royal transition-all shadow-sm">
+                                <input type="radio" name="area-mode" value="direct" checked onchange="toggleAreaMode()" class="w-4 h-4 text-refrimar-navy focus:ring-refrimar-royal">
+                                <div class="ml-3">
+                                    <span class="block text-sm font-bold text-slate-800">Já sei a Área Total (m²)</span>
+                                    <span class="block text-xs text-slate-500">Digitar valor em metros quadrados</span>
+                                </div>
+                            </label>
+
+                            <label class="relative flex items-center p-3.5 rounded-xl border border-slate-200 bg-white cursor-pointer hover:border-refrimar-royal transition-all shadow-sm">
+                                <input type="radio" name="area-mode" value="dimensions" onchange="toggleAreaMode()" class="w-4 h-4 text-refrimar-navy focus:ring-refrimar-royal">
+                                <div class="ml-3">
+                                    <span class="block text-sm font-bold text-slate-800">Calcular Medindo (m x m)</span>
+                                    <span class="block text-xs text-slate-500">Informar Comprimento × Largura</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Campos de entrada -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- Campo 1: Área direta -->
+                        <div id="mode-direct-container">
+                            <label class="block text-sm font-semibold text-slate-800 mb-2">Área do Cômodo (m²)</label>
+                            <div class="relative">
+                                <input type="number" id="area" min="1" max="300" value="18" oninput="calculateBTU()" required 
+                                       class="w-full pl-4 pr-12 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-refrimar-royal outline-none font-medium">
+                                <span class="absolute right-4 top-3.5 text-sm text-slate-400 font-medium">m²</span>
+                            </div>
+                        </div>
+
+                        <!-- Campo 2: Largura e Comprimento -->
+                        <div id="mode-dimensions-container" class="hidden md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-800 mb-2">Comprimento (m)</label>
+                                <div class="relative">
+                                    <input type="number" id="length" min="0.5" max="50" step="0.1" value="4.5" oninput="updateDimensionsAndBTU()" 
+                                           class="w-full pl-4 pr-10 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-refrimar-royal outline-none font-medium" placeholder="Ex: 4.5">
+                                    <span class="absolute right-4 top-3.5 text-sm text-slate-400 font-medium">m</span>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-800 mb-2">Largura (m)</label>
+                                <div class="relative">
+                                    <input type="number" id="width" min="0.5" max="50" step="0.1" value="4.0" oninput="updateDimensionsAndBTU()" 
+                                           class="w-full pl-4 pr-10 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-refrimar-royal outline-none font-medium" placeholder="Ex: 4.0">
+                                    <span class="absolute right-4 top-3.5 text-sm text-slate-400 font-medium">m</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Exposição Solar -->
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-800 mb-2">Sol no Cômodo</label>
+                            <select id="sun" onchange="calculateBTU()" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-refrimar-royal outline-none font-medium">
+                                <option value="morning">Sol da Manhã (Suave)</option>
+                                <option value="afternoon">Sol da Tarde (Forte/Direto)</option>
+                            </select>
+                        </div>
+
+                        <!-- Pessoas -->
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-800 mb-2">Pessoas no Cômodo</label>
+                            <input type="number" id="people" min="1" max="50" value="2" oninput="calculateBTU()" required 
+                                   class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-refrimar-royal outline-none font-medium">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-800 mb-2">Eletrônicos Ligados (TV, Computadores, etc.)</label>
+                            <input type="number" id="electronics" min="0" max="20" value="1" oninput="calculateBTU()" 
+                                   class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-refrimar-royal outline-none font-medium">
+                        </div>
+
+                        <div class="bg-refrimar-light border border-refrimar-sky/30 rounded-2xl p-4 flex items-center gap-3">
+                            <div class="w-10 h-10 bg-refrimar-navy text-white rounded-xl flex items-center justify-center shrink-0 font-bold">
+                                <i data-lucide="ruler" class="w-5 h-5 text-refrimar-sky"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs uppercase font-bold text-slate-500">Área Resultante:</span>
+                                <p class="text-lg font-extrabold text-refrimar-navy" id="calculated-area-display">18.00 m²</p>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- Resultado -->
+                <div id="btu-result" class="mt-8 pt-8 border-t border-slate-200 grid grid-cols-1 md:grid-cols-3 gap-6 items-center bg-slate-50 p-6 rounded-2xl">
+                    <div class="md:col-span-2 space-y-1">
+                        <span class="text-xs uppercase font-bold text-slate-500">Capacidade Comercial Recomendada:</span>
+                        <h3 class="text-3xl sm:text-4xl font-black text-refrimar-navy" id="result-btu">12.000 BTUs</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed" id="result-desc">Ideal para quartos e salas com até 2 pessoas.</p>
+                    </div>
+                    <div>
+                        <a href="#orcamento" onclick="prefillBTU()" class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3.5 px-4 rounded-xl text-center text-sm shadow-md transition-all flex items-center justify-center gap-2">
+                            <span>Solicitar Cotação para esta Potência</span>
+                            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMULÁRIO DE ORÇAMENTO COM DADOS PARA PMOC / NOTA FISCAL -->
+    <section id="orcamento" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-br from-refrimar-dark via-refrimar-navy to-refrimar-royal text-white rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden">
+                
+                <div class="text-center max-w-2xl mx-auto mb-8">
+                    <span class="bg-white/10 text-refrimar-sky px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider border border-white/10">Atendimento Residencial & Corporativo</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight mt-3">Solicite um Orçamento sem Compromisso</h2>
+                    <p class="text-slate-200 text-sm mt-2">Emitimos Nota Fiscal Eletrônica e Laudos Técnicos / PMOC para empresas.</p>
+                </div>
+
+                <form id="lead-form" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-200 mb-2">Nome Completo / Razão Social *</label>
+                            <input type="text" id="name" required placeholder="Ex: João Silva ou Sua Empresa LTDA" 
+                                   class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-refrimar-sky">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-slate-200 mb-2">WhatsApp / Telefone *</label>
+                            <input type="tel" id="phone" required placeholder="(00) 00000-0000" 
+                                   class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-refrimar-sky">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-200 mb-2">Tipo de Cliente *</label>
+                            <select id="client-type" required class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-refrimar-sky font-medium [&>option]:text-slate-900">
+                                <option value="Residencial (CPF)">Residencial (Pessoa Física)</option>
+                                <option value="Comercial (CNPJ / Nota Fiscal)">Comercial / Empresa (Precisa de Nota Fiscal)</option>
+                                <option value="PMOC para Empresas">Contrato de Manutenção</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-slate-200 mb-2">Serviço Pretendido *</label>
+                            <select id="service-type" required class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-refrimar-sky font-medium [&>option]:text-slate-900">
+                                <option value="Instalação Nova">Instalação de Ar Condicionado</option>
+                                <option value="Higienização / Limpeza">Higienização Bactericida</option>
+                                <option value="Manutenção Corretiva / Carga de Gás">Manutenção Corretiva / Carga de Gás</option>
+                                <option value="Infraestrutura / Passagem de Cobre">Infraestrutura em Obras</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-slate-200 mb-2">Mensagem ou Detalhes do Ambiente</label>
+                        <textarea id="notes" rows="3" placeholder="Informe a marca do aparelho, tamanho do espaço ou necessidade de Nota Fiscal..." 
+                                  class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-refrimar-sky"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-4 px-8 rounded-xl shadow-lg transition-all hover:scale-[1.01] flex items-center justify-center gap-2 text-lg">
+                        <i data-lucide="message-square" class="w-5 h-5"></i>
+                        <span>Enviar Solicitação via WhatsApp</span>
+                    </button>
+                </form>
+
+                <div id="form-success" class="hidden text-center py-8 space-y-4">
+                    <div class="w-16 h-16 bg-emerald-500 text-white rounded-full flex items-center justify-center mx-auto">
+                        <i data-lucide="check" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold">Solicitação Enviada!</h3>
+                    <p class="text-slate-200">Em instantes nossa equipe técnica entrará em contato.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GUIA DE ORIENTAÇÃO LEGAL (Visível para o Administrador do Site) -->
+<!--  <div class="bg-amber-50 border-y border-amber-200 py-4 px-4 text-xs text-amber-900">
+        <div class="max-w-7xl mx-auto flex items-start gap-3">
+            <i data-lucide="info" class="w-5 h-5 text-amber-600 shrink-0 mt-0.5"></i>
+            <div>
+                <strong class="font-bold">Onde atualizar os dados jurídicos do seu site:</strong>
+                <span>Substitua o texto pré-definido <code class="bg-amber-100 px-1.5 py-0.5 rounded text-amber-900 font-mono">00.000.000/0001-00</code> e o endereço fictício diretamente no código HTML (na barra superior e no rodapé abaixo). Isso garante total conformidade com o Decreto do E-commerce (Decreto nº 7.962/2013).</span>
+            </div>
+        </div>
+    </div>
+--> 
+    <!-- RODAPÉ COMPLETO CONFORME O DECRETO Nº 7.962/2013 -->
+    <footer class="bg-refrimar-dark text-slate-300 pt-16 pb-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                
+                <!-- COLUNA 1: IDENTIFICAÇÃO LEGAL DA EMPRESA (OBRIGATÓRIO POR LEI) -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-2">
+                        <span class="font-brand font-black text-2xl text-white">REFRI<span class="text-refrimar-sky">MAR</span></span>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Especialistas em Refrigeração Residencial e Comercial. Venda, instalação e manutenção preventiva.
+                    </p>
+
+                    <!-- Bloco de Identificação do CNPJ e Razão Social -->
+                    <div class="pt-2 text-xs space-y-1.5 text-slate-400 border-t border-slate-800">
+                        <p class="text-white font-bold">Dados Cadastrais da Empresa:</p>
+                        <p><strong class="text-slate-300">Razão Social:</strong> Refrimar Refrigeração & Climatização ME</p>
+                        <p><strong class="text-slate-300">CNPJ:</strong> 50.989.608/0001-69</p>
+                        <p><strong class="text-slate-300">Inscrição Estadual:</strong> ISENTO / Optante pelo Simples Nacional</p>
+                    </div>
+                </div>
+
+                <!-- COLUNA 2: ENDEREÇO FÍSICO E SEDE DA EMPRESA -->
+                <div>
+                    <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-4 flex items-center gap-1.5">
+                        <i data-lucide="map-pin" class="w-4 h-4 text-refrimar-sky"></i>
+                        Endereço & Sede
+                    </h4>
+                    <address class="not-italic text-xs text-slate-400 space-y-2 leading-relaxed">
+                        <p class="text-slate-200 font-semibold">Endereço Refrimar:</p>
+                        <p>Rua Salgado Filho, Nº 1489</p>
+                        <p>Bairro Varzea da Matriz - CEP 62800-378</p>
+                        <p>Aracati - CE</p>
+                    </address>
+
+                    <div class="mt-4 pt-3 border-t border-slate-800 text-xs text-slate-400">
+                        <p class="font-semibold text-slate-200 mb-1">Horário de Funcionamento:</p>
+                        <p>Segunda a Sexta: 08:00h - 18:00h</p>
+                        <p>Sábados: 08:00h - 13:00h</p>
+                    </div>
+                </div>
+
+                <!-- COLUNA 3: CONTATOS OFICIAIS & NFE -->
+                <div>
+                    <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-4 flex items-center gap-1.5">
+                        <i data-lucide="phone-call" class="w-4 h-4 text-refrimar-sky"></i>
+                        Canais de Atendimento
+                    </h4>
+                    <ul class="space-y-3 text-xs text-slate-400">
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="phone" class="w-4 h-4 text-emerald-400"></i>
+                            <span class="text-slate-200 font-medium">(88) 99328-1525 (Central WhatsApp)</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="mail" class="w-4 h-4 text-refrimar-sky"></i>
+                            <span>refrimar2103@gmail.com</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="file-check-2" class="w-4 h-4 text-emerald-400"></i>
+                            <span></span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- COLUNA 4: NORMAS E GARANTIAS -->
+                <div>
+                    <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-4 flex items-center gap-1.5">
+                        <i data-lucide="shield" class="w-4 h-4 text-refrimar-sky"></i>
+                        Garantia & Conformidade
+                    </h4>
+                    <ul class="space-y-2 text-xs text-slate-400">
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i>
+                            <span>100% de Conformidade com o Decreto 7.962/2013</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i>
+                            <span></span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i>
+                            <span>Produtos de Higienização registrados na Anvisa</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- RODAPÉ INFERIOR / DIREITOS AUTORAIS E POLÍTICAS -->
+            <div class="pt-8 border-t border-slate-800 text-center text-xs text-slate-500 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p>&copy; 2026 Refrimar Refrigeração & Climatização. CNPJ 50.989.608/0001-69. Todos os direitos reservados.</p>
+                <div class="flex gap-4 text-slate-400">
+                    <a href="#" class="hover:underline hover:text-white">Termos de Uso</a>
+                    <span>•</span>
+                    <a href="#" class="hover:underline hover:text-white">Política de Privacidade & LGPD</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS DE FUNCIONALIDADE INTERATIVA -->
+    <script>
+        // Inicializar Lucide Icons
+        lucide.createIcons();
+
+        // Toggle Menu Mobile
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // Alternar modo do cálculo de área (M² Direto vs Medidas m x m)
+        function toggleAreaMode() {
+            const mode = document.querySelector('input[name="area-mode"]:checked').value;
+            const directContainer = document.getElementById('mode-direct-container');
+            const dimensionsContainer = document.getElementById('mode-dimensions-container');
+
+            if (mode === 'direct') {
+                directContainer.classList.remove('hidden');
+                dimensionsContainer.classList.add('hidden');
+                calculateBTU();
+            } else {
+                directContainer.classList.add('hidden');
+                dimensionsContainer.classList.remove('hidden');
+                updateDimensionsAndBTU();
+            }
+        }
+
+        // Calcular dimensão
+        function updateDimensionsAndBTU() {
+            const length = parseFloat(document.getElementById('length').value) || 0;
+            const width = parseFloat(document.getElementById('width').value) || 0;
+            const computedArea = length * width;
+
+            document.getElementById('area').value = computedArea.toFixed(2);
+            calculateBTU();
+        }
+
+        // Lógica do Simulador BTU
+        function calculateBTU() {
+            const mode = document.querySelector('input[name="area-mode"]:checked')?.value || 'direct';
+            let area = 0;
+
+            if (mode === 'dimensions') {
+                const length = parseFloat(document.getElementById('length').value) || 0;
+                const width = parseFloat(document.getElementById('width').value) || 0;
+                area = length * width;
+            } else {
+                area = parseFloat(document.getElementById('area').value) || 0;
+            }
+
+            document.getElementById('calculated-area-display').textContent = area.toFixed(2) + " m²";
+
+            const sun = document.getElementById('sun').value;
+            const people = parseInt(document.getElementById('people').value) || 1;
+            const electronics = parseInt(document.getElementById('electronics').value) || 0;
+
+            const btuPerM2 = (sun === 'afternoon') ? 800 : 600;
+            let totalBTU = area * btuPerM2;
+
+            if (people > 1) {
+                totalBTU += (people - 1) * 600;
+            }
+
+            if (electronics > 0) {
+                totalBTU += electronics * 600;
+            }
+
+            let commercialBTU = 9000;
+            let description = "";
+
+            if (totalBTU <= 0) {
+                commercialBTU = 0;
+                description = "Informe medidas válidas do cômodo.";
+            } else if (totalBTU <= 9000) {
+                commercialBTU = 9000;
+                description = "Ideal para quartos pequenos e salas até ~12m².";
+            } else if (totalBTU <= 12000) {
+                commercialBTU = 12000;
+                description = "Perfeito para quartos de casal, suítes ou salas de até ~20m².";
+            } else if (totalBTU <= 18000) {
+                commercialBTU = 18000;
+                description = "Recomendado para salas amplas ou escritórios médios.";
+            } else if (totalBTU <= 24000) {
+                commercialBTU = 24000;
+                description = "Ideal para ambientes integrados ou espaços comerciais.";
+            } else {
+                commercialBTU = Math.ceil(totalBTU / 1000) * 1000;
+                description = "Recomendado consultar nossa equipe para um projeto técnico ou Multi-Split.";
+            }
+
+            document.getElementById('result-btu').textContent = commercialBTU > 0 ? commercialBTU.toLocaleString('pt-BR') + " BTUs" : "0 BTUs";
+            document.getElementById('result-desc').textContent = description;
+        }
+
+        function prefillBTU() {
+            const resultBTU = document.getElementById('result-btu').textContent;
+            const areaDisplay = document.getElementById('calculated-area-display').textContent;
+            const notesField = document.getElementById('notes');
+            notesField.value = `Orçamento para ambiente de ${areaDisplay} - Potência recomendada no simulador Refrimar: ${resultBTU}.`;
+        }
+
+        // Submeter formulário via WhatsApp
+        function handleFormSubmit(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const clientType = document.getElementById('client-type').value;
+            const service = document.getElementById('service-type').value;
+            const notes = document.getElementById('notes').value;
+
+            let text = `*Nova solicitação de orçamento - Refrimar Refrigeração*\n\n`;
+            text += `*Cliente/Empresa:* ${name}\n`;
+            text += `*Telefone:* ${phone}\n`;
+            text += `*Tipo de Cliente:* ${clientType}\n`;
+            text += `*Serviço:* ${service}\n`;
+            if (notes) {
+                text += `*Observações:* ${notes}\n`;
+            }
+
+            const encodedText = encodeURIComponent(text);
+            const whatsappNumber = "5500000000000";
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedText}`;
+
+            document.getElementById('lead-form').classList.add('hidden');
+            document.getElementById('form-success').classList.remove('hidden');
+
+            window.open(whatsappUrl, '_blank');
+        }
+
+        calculateBTU();
+    </script>
+</body>
+</html>
